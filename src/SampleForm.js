@@ -3,20 +3,54 @@ import ReactDOM from 'react-dom/client';
 
 function SampleForm() {
 
-const [name, setName] = useState("");
+  const [inputs, setInputs] = useState({});
 
-const handleSubmit = (event) => {
-  console.log({name});
-  event.preventDefault();
-  alert(`your name is : ${name}`);
-  
-}
-
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setInputs(values => ({...values, [name]: value}))
+  }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(inputs);
+    console.log(inputs);
+  }
   return(
     <form onSubmit={handleSubmit}>
       <label>Enter your Name :
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)}></input>
+        <input 
+          type="text" 
+          name="username"  
+          value={inputs.username || ""} 
+          onChange={handleChange}>
+         </input>
       </label>
+      <label>Enter your age:
+        <input 
+          type="number" 
+          name="age" 
+          value={inputs.age || ""} 
+          onChange={handleChange}
+        />
+      </label>
+      <label>Enter your message:
+        <textarea 
+          name="message" 
+          value={inputs.message || ""}  
+          onChange={handleChange} />
+      </label>
+      <label>Select your vehicle:
+      <select 
+        name="vehicle"
+        value={inputs.vehicle}
+        onChange={handleChange}>
+        <option value="Ford">Ford</option>
+        <option value="Volvo" selected>Volvo</option>
+        <option value="Fiat">Fiat</option>
+      </select>
+      </label>
+        
+        <input type="submit" />
     </form>
   );
 }
