@@ -3,7 +3,8 @@ import React from 'react';
 // import UserProfile from './UserProfile';
 // import ButtonClick from './ButtonClick';
 // import MyForm from './MyForm';
-import SampleForm from './SampleForm';
+// import SampleForm from './SampleForm';
+import SampleForm from './CRUD';
 
 // function App(prop){
 //   return(
