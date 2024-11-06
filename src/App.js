@@ -4,7 +4,8 @@ import React from 'react';
 // import ButtonClick from './ButtonClick';
 // import MyForm from './MyForm';
 // import SampleForm from './SampleForm';
-import SampleForm from './CRUD';
+// import SampleForm from './CRUD';
+import NewForm from './NewForm';
 
 // function App(prop){
 //   return(
@@ -19,7 +20,7 @@ function App() {
 
   return(
     <div>
-      <SampleForm></SampleForm>
+      <NewForm></NewForm>
     </div>
   );
 }
